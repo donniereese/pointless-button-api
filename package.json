@@ -1,0 +1,26 @@
+{
+  "name": "pointless-button-api",
+  "version": "0.1.0",
+  "description": "A Pointless Server instance for the Pointless Button service",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donniereese/pointless-button-api.git"
+  },
+  "author": "Donnie Reese <hi@donniereese.com> (https://www.donniereese.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donniereese/pointless-button-api/issues"
+  },
+  "homepage": "https://github.com/donniereese/pointless-button-api#readme"
+}

@@ -1,3 +1,6 @@
+# local mongo store
+data/
+
 # Logs
 logs
 *.log
