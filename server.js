@@ -8,18 +8,21 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // bcrypt crypto
 const bcrypt = require('bcrypt');
+// cors - cross-origin stuff
+cors = require('cors');
+// config
+const config = require('./config');
 // Server port;
-const serverPort = process.env.PORT || 3000;
+const serverPort = config.port;
+
+console.log(config);
 
 // API Route handler
 const apiRoutes = require('./routes/api.js');
 
-// get session key from process or get default
-const secret = process.env.sessionSecret || 'mollythechickenleg';
-
 // session object
 const sess = {
-  secret,
+  secret: config.secret,
   cookie: {}
 }
 
@@ -36,6 +39,10 @@ if (server.get('env') === 'production') {
 server.use(session(sess));
 // use body parser and process as json for standardization of input
 server.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+server.use(bodyParser.urlencoded({ extended: false }));
+// specify cors settings TODO: cors settings needed
+server.use(cors());
 
 server.get('/', (req, res) => {
     res.json({

@@ -1,4 +1,4 @@
-const mongoose - require('mongoose');
+const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/pointlessButton', { useMongoClient: true });
@@ -16,7 +16,7 @@ const SwitchSchema = new mongoose.model({
    conditionals: ,
    createdTimestamp: { type: Date, default: Date.now() },
    updatedTimestamp: { type: Date, default: Date.now() }
-   
+
 });
 
 module.exports = mongoose.model('Switch', SwitchSchema);

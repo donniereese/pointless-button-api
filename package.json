@@ -6,12 +6,22 @@
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
-    "mongoose": "^4.13.0"
+    "hat": "0.0.3",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.0",
+    "passport": "^0.4.0",
+    "passport-custom": "^1.0.5",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0",
+    "random-word": "^2.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests/*.test.js",
+    "test:watch": "mocha -w ./tests/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +32,10 @@
   "bugs": {
     "url": "https://github.com/donniereese/pointless-button-api/issues"
   },
-  "homepage": "https://github.com/donniereese/pointless-button-api#readme"
+  "homepage": "https://github.com/donniereese/pointless-button-api#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.0.1"
+  }
 }
