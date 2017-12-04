@@ -17,6 +17,6 @@ router.post('/:buttonId', requireUserAuth, buttonsController.triggerButtonById);
 
 router.post('/:buttonId/public', buttonsController.triggerButtonById);
 
-router.delete('/:buttonId', requireUserAuth, buttonController.removeButtonById);
+router.delete('/:buttonId', requireUserAuth, buttonsController.removeButtonById);
 
 module.exports = router;
