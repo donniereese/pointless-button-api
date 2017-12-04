@@ -28,6 +28,7 @@ axios({
         secret: 'fj0290f2j0ef0280hfoifn20j92fj02fj2'
     }
 });
+```
 
 #### Authentication Response
 Each authentication will return json with the status of the requestion and the token if the `status: true`.
