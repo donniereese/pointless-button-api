@@ -6,7 +6,7 @@ const Key = require('./Key.js');
 const bcrypt = require('bcrypt');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.mongodb_uri, { useMongoClient: true });
+mongoose.connect(config.mongodb_uri, config.mdbOptions);
 
 const apiKeySchema = new mongoose.Schema({
     owner: { type: mongoose.Schema.Types.ObjectId },

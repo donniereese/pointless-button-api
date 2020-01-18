@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const config = require('../config');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/pointlessButton', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/pointlessButton', config.mbdOptions);
 
 const SwitchSchema = new mongoose.model({
    owner: { type: Schema.Types.ObjectId, required: true },

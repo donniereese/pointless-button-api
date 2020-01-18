@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const config = require('../config');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.mongodb_uri, { useMongoClient: true });
+mongoose.connect(config.mongodb_uri, config.mbdOptions);
 
 const ButtonSchema = new mongoose.Schema({
     owner: { type: mongoose.Schema.Types.ObjectId, required: true },

@@ -4,7 +4,7 @@ const config = require('../config');
 const hat = require('hat');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.mongodb_uri, { useMongoClient: true });
+mongoose.connect(config.mongodb_uri, config.mdbOptions);
 
 const UserSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
