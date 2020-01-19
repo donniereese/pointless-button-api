@@ -21,6 +21,7 @@ module.exports.apiKey = (req, res) => {
 };
 
 module.exports.userAccountLogin = (req, res) => {
+  console.log('User attempting to log in')
     // so a user was authenticated by passport...
     // TODO: gather bits for the token....
     const u = { id, username } = req.user;

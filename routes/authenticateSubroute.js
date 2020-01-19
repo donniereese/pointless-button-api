@@ -14,6 +14,6 @@ const authenticate = require('../controllers/authenticateController.js');
 router.post('/login', requireUserSignin, authenticate.userAccountLogin);
 
 // Login for the api with apiKey & token
-router.post('/key', requireApiSignin, authenticate.apiKey);
+router.post('/key', (req, res, next) => { console.log(req) }, requireApiSignin, authenticate.apiKey);
 
 module.exports = router;

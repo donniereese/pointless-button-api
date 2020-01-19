@@ -5,6 +5,9 @@ const config = require('../config');
 const JwtStrategy = require('passport-jwt').Strategy;
 const { ExtractJwt } = require('passport-jwt');
 const LocalStrategy = require('passport-local');
+const { Listener, status } = require('./ear');
+
+const ear = new Listener('papers');
 
 /* Options Confurations
  *
@@ -104,12 +107,22 @@ const requireUserAuthStrategy = new JwtStrategy(authOptions, (payload, done) => 
 
 //
 const requireUserSigninStrategy = new LocalStrategy(userSigninOptions, (email, password, done) => {
+    ear.hear(`requireUserSigninStrategy(${email}, ${password})`)
     // Find the user
     User.findOne({ email }, (err, user) => {
         // if error
-        if (err) return done(err);
+        if (err) {
+          console.log('Error in requireUserSigninStrategy()')
+          return done(err);
+        }
         // if no user
-        if (!user) return done(null, false);
+        if (!user) {
+          console.log('No User Found...')
+          return done(null, false);
+        }
+
+        console.log(`user.checkPassword(${password}, handler())`)
+
         user.checkPassword(password, (err, isMatch) => {
             // error returned from checkPassword
             if (err) return done(err);
